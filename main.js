@@ -1,7 +1,7 @@
 function getWeather(CityName) {
   let now = moment();
   const WEATHER_API_KEY = "0cf4eae4bb76e51533e83335fd9ace51";
-  const OwmBaseUrl = `http://api.openweathermap.org/data/2.5/weather?q=${CityName}&appid=`;
+  const OwmBaseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${CityName}&appid=`;
   function kelvinToCel(kelvin) {
     return parseFloat(kelvin) - 273.1;
   }
@@ -10,7 +10,7 @@ function getWeather(CityName) {
     const lat = r.coord.lat;
     const cityName = r.name;
     const imgUrl =
-      "http://openweathermap.org/img/wn/" + r.weather[0].icon + ".png";
+      "https://openweathermap.org/img/wn/" + r.weather[0].icon + ".png";
     $("#temperature").html(
       `<img src="${imgUrl}" />${kelvinToCel(r.main.temp).toFixed(1)}`,
     );
@@ -26,7 +26,7 @@ function getWeather(CityName) {
     $("#cityName").html(r.name);
     $("#dateHeader").html(now.format("DD/MM/YYYY"));
     $.ajax(
-      `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${long}&appid=${WEATHER_API_KEY}`,
+      `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${long}&appid=${WEATHER_API_KEY}`,
     ).then((r) => {
       if (parseFloat(r.value) < 5.0) {
         $("#UVIndex").addClass("text-success");
@@ -46,19 +46,19 @@ function getWeather(CityName) {
         $("#day-5-title").html(moment.unix(r.daily[5].dt).format("DD/MM/YYYY"));
         console.log();
         $("#day-1-card").html(
-          `<b>Temperature</b> <br> <img src="http://openweathermap.org/img/wn/${r.daily[1].weather[0].icon}.png""/> ${r.daily[1].temp.day} <br> <b>Humidity</b> <br> ${r.daily[1].humidity}`,
+          `<b>Temperature</b> <br> <img src="https://openweathermap.org/img/wn/${r.daily[1].weather[0].icon}.png""/> ${r.daily[1].temp.day} <br> <b>Humidity</b> <br> ${r.daily[1].humidity}`,
         );
         $("#day-2-card").html(
-          `<b>Temperature</b> <br> <img src="http://openweathermap.org/img/wn/${r.daily[2].weather[0].icon}.png""/> ${r.daily[2].temp.day} <br> <b>Humidity</b> <br> ${r.daily[2].humidity}`,
+          `<b>Temperature</b> <br> <img src="https://openweathermap.org/img/wn/${r.daily[2].weather[0].icon}.png""/> ${r.daily[2].temp.day} <br> <b>Humidity</b> <br> ${r.daily[2].humidity}`,
         );
         $("#day-3-card").html(
-          `<b>Temperature</b> <br> <img src="http://openweathermap.org/img/wn/${r.daily[3].weather[0].icon}.png""/> ${r.daily[3].temp.day} <br> <b>Humidity</b> <br> ${r.daily[3].humidity}`,
+          `<b>Temperature</b> <br> <img src="https://openweathermap.org/img/wn/${r.daily[3].weather[0].icon}.png""/> ${r.daily[3].temp.day} <br> <b>Humidity</b> <br> ${r.daily[3].humidity}`,
         );
         $("#day-4-card").html(
-          `<b>Temperature</b> <br> <img src="http://openweathermap.org/img/wn/${r.daily[4].weather[0].icon}.png""/> ${r.daily[4].temp.day} <br> <b>Humidity</b> <br> ${r.daily[4].humidity}`,
+          `<b>Temperature</b> <br> <img src="https://openweathermap.org/img/wn/${r.daily[4].weather[0].icon}.png""/> ${r.daily[4].temp.day} <br> <b>Humidity</b> <br> ${r.daily[4].humidity}`,
         );
         $("#day-5-card").html(
-          `<b>Temperature</b> <br> <img src="http://openweathermap.org/img/wn/${r.daily[5].weather[0].icon}.png""/> ${r.daily[5].temp.day} <br> <b>Humidity</b> <br> ${r.daily[5].humidity}`,
+          `<b>Temperature</b> <br> <img src="https://openweathermap.org/img/wn/${r.daily[5].weather[0].icon}.png""/> ${r.daily[5].temp.day} <br> <b>Humidity</b> <br> ${r.daily[5].humidity}`,
         );
       });
     });

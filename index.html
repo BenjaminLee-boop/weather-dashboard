@@ -1,0 +1,119 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Weather APP</a>
+    </nav>
+  </header>
+  <br>
+  <div class="container">
+    <section class="searcSection">
+      <div class="col-xs-10">
+        <div class="input-group">
+          <input type="text" class="form-control" value="1" placeholder="Adelaide" id="searchText" />
+          <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+        </div>
+        <button type="button" class="btn btn-link" id="Adelaide">Adelaide</button>
+        <button type="button" class="btn btn-link" id="Melbourne">Melbourne</button>
+        <button type="button" class="btn btn-link" id="Sydney">Sydney</button>
+        <button type="button" class="btn btn-link" id="Darwin">Darwin</button>
+        <button type="button" class="btn btn-link" id="WesternAustralia">Western Australia</button>
+        <button type="button" class="btn btn-link" id="Tasmania">Tasmania </button>
+    </section>
+    <hr>
+    <section>
+      <h1 id="cityName"></h1>
+      <h4 id="dateHeader"></h4>
+    </section>
+
+    <section class="content">
+      <div class="row">
+        <div class="card w-25">
+          <div class="card-body">
+            <h5 class="card-title">Temperature</h5>
+            <p class="card-text" id="temperature"></p>
+          </div>
+        </div>
+        <div class="card w-25">
+          <div class="card-body">
+            <h5 class="card-title">Humidity</h5>
+            <p class="card-text" id="humidity"></p>
+          </div>
+        </div>
+        <div class="card w-25">
+          <div class="card-body">
+            <h5 class="card-title">Wind-Speed</h5>
+            <p class="card-text" id="Wind-Speed"></p>
+          </div>
+        </div>
+        <div class="card w-25">
+          <div class="card-body">
+            <h5 class="card-title">UV index</h5>
+            <p class="card-text" id="UVIndex"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
+    <h2>5 Day forecast</h2>
+    <hr>
+    <div class="row">
+      <div class="card w-25 ">
+        <div class="card-body">
+          <h5 class="card-title" id="day-1-title"></h5>
+          <p class="card-text" id="day-1-card"></p>
+        </div>
+      </div>
+      <div class=" card w-25">
+        <div class="card-body">
+          <h5 class="card-title" id="day-2-title"></h5>
+          <p class="card-text" id="day-2-card"></p>
+        </div>
+      </div>
+      <div class=" card w-25">
+        <div class="card-body">
+          <h5 class="card-title" id="day-3-title"></h5>
+          <p class="card-text" id="day-3-card"></p>
+        </div>
+      </div>
+      <div class=" card w-25">
+        <div class="card-body">
+          <h5 class="card-title" id="day-4-title"></h5>
+          <p class="card-text" id="day-4-card"></p>
+        </div>
+      </div>
+      <div class=" card w-25">
+        <div class="card-body">
+          <h5 class="card-title" id="day-5-title"></h5>
+          <p class="card-text" id="day-5-card"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="main.js"></script>
+</body>
+
+</html>
